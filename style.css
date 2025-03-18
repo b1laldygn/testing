@@ -19,7 +19,7 @@ body {
     top: -50px; /* Yapraklar yukarıdan başlamalı */
     width: 40px;
     height: 40px;
-    background-image: url('/assets/leaf.png'); /* Yaprak resmi */
+    background-image: url('https://raw.githubusercontent.com/b1laldygn/testing/refs/heads/main/assets/leaf.png'); /* Yaprak resmi */
     background-size: cover;
     opacity: 0.8;
     animation: fall linear infinite;
