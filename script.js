@@ -3,18 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const leaf = document.createElement("div");
         leaf.classList.add("leaf");
         
-        // Rastgele bir konum belirleme
+        // Rastgele konum ve animasyon süresi
         leaf.style.left = `${Math.random() * window.innerWidth}px`;
-        leaf.style.animationDuration = `${3 + Math.random() * 5}s`; // 3-8 saniye arasında sürebilir
-        
+        const duration = 3 + Math.random() * 5; // 3-8 saniye
+        leaf.style.animationDuration = `${duration}s`;
+
         document.body.appendChild(leaf);
 
-        // Animasyon tamamlandığında yaprağı kaldır
+        // Animasyon süresi sonunda yaprağı kaldır
         setTimeout(() => {
             leaf.remove();
-        }, 8000); // En uzun animasyon süresinden sonra temizleme
+        }, duration * 1000);
     }
 
-    // Belirli aralıklarla yaprak oluştur
+    // Yaprakları sürekli oluştur
     setInterval(createLeaf, 500);
 });
