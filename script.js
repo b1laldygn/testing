@@ -1,21 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const numLeaves = 10; // Aynı anda ekranda olacak yaprak sayısı
+    const container = document.body;
+
     function createLeaf() {
-        const leaf = document.createElement("div");
+        const leaf = document.createElement("img");
+        leaf.src = "assets/leaf.png"; // Yaprak görseli
         leaf.classList.add("leaf");
-        
-        // Rastgele konum ve animasyon süresi belirle
-        leaf.style.left = `${Math.random() * window.innerWidth}px`;
-        const duration = 5 + Math.random() * 5; // 5-10 saniye arasında değişen süre
-        leaf.style.animation = `fall ${duration}s linear forwards`;
 
-        document.body.appendChild(leaf);
+        // Rastgele başlangıç konumu ve animasyon süresi ayarla
+        leaf.style.left = Math.random() * window.innerWidth + "px";
+        leaf.style.animationDuration = 5 + Math.random() * 5 + "s"; // 5-10 saniye arasında süzülsün
+        leaf.style.animationDelay = Math.random() * 3 + "s"; // Rastgele gecikme
 
-        // Animasyon süresi sonunda yaprağı kaldır
+        container.appendChild(leaf);
+
+        // Yaprak ekranın altına ulaşınca sil
         setTimeout(() => {
             leaf.remove();
-        }, duration * 1000);
+        }, 10000);
     }
 
-    // Yaprakları sürekli oluştur
-    setInterval(createLeaf, 500);
+    // Yaprakları belirli aralıklarla oluştur
+    setInterval(createLeaf, 1000);
 });
