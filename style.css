@@ -31,7 +31,7 @@ body {
 .leaf {
     position: fixed;
     width: 40px;
-    height: top;
+    height: 100px;
     animation: fall linear infinite;
 }
 
